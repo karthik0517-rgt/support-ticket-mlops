@@ -1,0 +1,13 @@
+transformers
+datasets
+scikit-learn
+pandas
+numpy
+fastapi
+uvicorn
+dvc
+mlflow
+python-multipart
+torch
+torchvision
+torchaudio
