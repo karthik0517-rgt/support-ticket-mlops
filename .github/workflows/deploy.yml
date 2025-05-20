@@ -19,11 +19,18 @@ jobs:
 
     - name: Copy files to server
       run: |
-        ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} << 'EOF'
+        ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+          # Clone the repo if it doesn't exist
+          if [ ! -d ~/support-ticket-zero-shot ]; then
+            git clone https://github.com/karthik0517-rgt/support-ticket-zero-shot.git ~/support-ticket-zero-shot
+          fi
+    
           cd ~/support-ticket-zero-shot
           git pull origin main
+    
           docker stop support-app || true
           docker rm support-app || true
+    
           docker build -t support-app .
           docker run -d -p 8000:8000 --name support-app support-app
         EOF
