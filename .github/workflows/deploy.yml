@@ -22,7 +22,7 @@ jobs:
         run: |
         ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} << 'EOF'
           if [ ! -d ~/support-ticket-zero-shot ]; then
-            git clone https://github.com/karthik0517-rgt/support-ticket-zero-shot.git ~/support-ticket-zero-shot
+             git clone git@github.com:karthik0517-rgt/support-ticket-zero-shot.git ~/support-ticket-zero-shot
           fi
 
           cd ~/support-ticket-zero-shot
