@@ -1,8 +1,10 @@
 name: Deploy to Ubuntu Server
 
 on:
-  push:
-    branches: [main]
+ workflow_run:
+    workflows: ["Build and Push Docker Image"]  # Name of your build workflow
+    types:
+      - completed
 
 jobs:
   deploy:
