@@ -51,7 +51,6 @@ pip install -r requirements.txt
 uvicorn api.main:app --reload
 
 🐳 Docker Deployment
-c
 # Build image
 docker build -t support-ticket-zero-shot .
 
@@ -62,6 +61,7 @@ docker run -p 8000:8000 \
     support-ticket-zero-shot
 
 📬 Example Request
+http://localhost:8000/docs
 
 POST /predict
 {
@@ -69,10 +69,7 @@ POST /predict
 }
 
 Response:
-
 json
-Copy
-Edit
 {
   "label": "Billing and Payments",
   "score": 0.89
