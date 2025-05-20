@@ -31,23 +31,6 @@ This project is an end-to-end **Support Ticket Classifier** API powered by a **H
 | Versioning    | Git, GitHub                         |
 | CI/CD (optional) | GitHub Actions                    |
 
----
-
-## 📂 Folder Structure
-support-ticket-mlops/
-│
-├── api/ # FastAPI application
-│ ├── main.py
-│ ├── model_loader.py
-│ └── request_schema.py
-│
-├── data/ # Training/test data (gitignored)
-├── model_cache/ # HF model cache (mounted at runtime)
-├── Dockerfile # Optimized Docker build
-├── requirements.txt
-└── README.md
-
-
 
 ---
 
