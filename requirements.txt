@@ -1,13 +1,18 @@
-transformers
-datasets
-scikit-learn
-pandas
-numpy
 fastapi
 uvicorn
+transformers==4.30.2
+datasets==2.12.0
+scikit-learn
+pandas
+numpy==1.26.4
 dvc
 mlflow
 python-multipart
-torch
-torchvision
-torchaudio
+
+# CPU-only Torch (saves 2GB+ space)
+torch==2.0.1+cpu
+torchvision==0.15.2+cpu
+torchaudio==2.0.2+cpu
+
+# Required for Hugging Face pipelines
+accelerate==0.21.0

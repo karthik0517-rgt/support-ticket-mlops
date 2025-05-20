@@ -1,0 +1,41 @@
+# Python cache and artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.log
+*.sqlite3
+
+# Virtual environments and IDEs
+.venv/
+venv/
+.vscode/
+.idea/
+
+# Version control and metadata
+.git/
+.gitignore
+.dvc/
+.dvcignore
+
+# Large and unnecessary folders
+data/
+results/
+mlartifacts/
+models/
+logs/
+mlruns/
+model_cache/
+
+# Notebooks & test cache
+*.ipynb_checkpoints
+.pytest_cache/
+*.egg-info/
+
+# OS & editor backups
+.DS_Store
+Thumbs.db
+*~
+*.bak
+*.swp

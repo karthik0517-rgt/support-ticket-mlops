@@ -1,8 +1,26 @@
+# Python
 venv/
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 *.pkl
-.dvc/
-.mlflow/
+*.log
+
+# Virtualenvs / Envs
 .env
-/data
+*.env
+
+# DVC + ML metadata
+.dvc/
+.dvcignore
+.mlflow/
+mlartifacts/
+mlruns/
+results/
+models/
+model_cache/
+logs/
+
+# Data
+data/
