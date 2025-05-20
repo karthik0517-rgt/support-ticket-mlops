@@ -34,6 +34,9 @@ jobs:
           docker rm support-app || true
     
           docker build -t support-app .
-          docker run -d -p 8000:8000 --name support-app support-app
+          docker run -d -p 8000:8000 \
+          -v ~/model_cache:/app/model_cache \
+          -e HF_HOME=/app/model_cache \
+          --name support-app support-app
         EOF
     
