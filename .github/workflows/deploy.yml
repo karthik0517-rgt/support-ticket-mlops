@@ -1,0 +1,29 @@
+name: Deploy to Ubuntu Server
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup SSH
+      uses: webfactory/ssh-agent@v0.8.0
+      with:
+        ssh-private-key: ${{ secrets.SSH_KEY }}
+
+    - name: Copy files to server
+      run: |
+        ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} << 'EOF'
+          cd ~/support-ticket-zero-shot
+          git pull origin main
+          docker stop support-app || true
+          docker rm support-app || true
+          docker build -t support-app .
+          docker run -d -p 8000:8000 --name support-app support-app
+        EOF
