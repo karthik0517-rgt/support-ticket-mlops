@@ -23,11 +23,11 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan github.com >> ~/.ssh/known_hosts
     
-          if [ ! -d ~/support-ticket-zero-shot ]; then
-            git clone git@github.com:karthik0517-rgt/support-ticket-zero-shot.git ~/support-ticket-zero-shot
+          if [ ! -d ~/support-ticket-mlops ]; then
+            git clone git@github.com:karthik0517-rgt/support-ticket-mlops.git ~/support-ticket-mlops
           fi
     
-          cd ~/support-ticket-zero-shot
+          cd ~/support-ticket-mlops
           git pull origin main
     
           docker stop support-app || true
