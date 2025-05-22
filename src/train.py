@@ -99,4 +99,4 @@ with mlflow.start_run():
     # Log model
     mlflow.pytorch.log_model(model, "model")
 
-    print(f"✅ Training complete. Accuracy: {eval_metrics['eval_accuracy']:.2f}")
+    print(f"✅ ✅ Training complete. Accuracy: {eval_metrics['eval_accuracy']:.2f}")
